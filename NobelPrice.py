@@ -1,4 +1,3 @@
-
 import numpy as np
 import streamlit as st
 import pandas as pd
@@ -6,8 +5,8 @@ from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.naive_bayes import MultinomialNB
 
 
-st.write(''' # Predicción de categoría de Premio Nobel ''')
-st.image("AlfredNobel.jpg", caption="Su creador fue el inventor sueco Alfred Nobel mediante su testamento en 1895.")
+st.write(''' # Predicción de categoría de Premio Nobel con entrenamiento basado en idioma Inglés ''')
+st.image("AlfredNobel.jpg", caption="October 21, 1833 - December 10, 1896")
 
 st.header('Texto')
 
@@ -40,16 +39,16 @@ prediction = nb.predict(df_dtm)
 #'Physics', 'Medicine', 'Peace', 'Literature', 'Chemistry', 'Economics'
 st.subheader('Predicción')
 if prediction == 0:
-  st.write('Physics')
+  st.write('Física')
 elif prediction == 1:
-  st.write('Medicine')
+  st.write('Medicina')
 elif prediction == 2:
-  st.write('Peace')
+  st.write('Paz')
 elif prediction == 3:
   st.write('Literature')
 elif prediction == 4:
-  st.write('Chemistry')
+  st.write('Química')
 elif prediction == 5:
-  st.write('Economics')
+  st.write('Economía')
 else:
   st.write('Sin predicción')
